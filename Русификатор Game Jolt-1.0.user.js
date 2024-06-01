@@ -287,18 +287,25 @@
             addClass
         }) => {
             const elements = document.querySelectorAll(selector);
-
-            document.querySelectorAll(selector).forEach((element) => {
-                if (addClass) {
-                    element.classList.add(addClass);
-                } else if (typeof oldText === 'string') {
+            elements.forEach(element => {
+                if (typeof oldText === 'string') {
                     if (element[attr].trim() === oldText) {
                         element[attr] = newText;
+                    }
+
+                    if (element.textContent.includes(oldText)) {
+                        element.innerHTML = element.innerHTML.replace(oldText, newText);
                     }
                 } else if (oldText instanceof RegExp) {
                     element[attr] = element[attr].replace(oldText, newText);
                 }
             });
+
+            if (addClass) {
+                elements.forEach(element => {
+                    element.classList.add(addClass);
+                });
+            }
         });
 
         // Применение класса для использования шрифта Fira Sans
