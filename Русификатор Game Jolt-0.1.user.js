@@ -42,11 +42,6 @@
     // Функция для замены текста
     function replaceText() {
         const replacements = [{
-                selector: 'div.content-viewer.quest-stage-description-content p span',
-                oldText: 'Anyone can react to a comment. Can you react to 5 different ones?',
-                newText: 'Каждый может поставить реакцию на комментарий. А сможете ли вы поставить на 5 разных?'
-            },
-            {
                 selector: 'div.-header-lead-text.-main-header-text',
                 oldText: 'Become a Game Jolt Creator',
                 newText: 'СТАНЬ ТВОРЦОМ НА GAME JOLT'
@@ -67,14 +62,29 @@
                 newText: 'Заряд'
             },
             {
+                selector: 'section.section > div',
+                oldText: 'Objectives',
+                newText: 'Цели и задачи'
+            },
+            {
+                selector: 'div.-details',
+                oldText: 'Like the post linked in the quest description',
+                newText: 'Лайкните пост, указанный в описании квеста'
+            },
+            {
                 selector: 'div.text-center > div',
                 oldText: 'DAILY QUEST',
                 newText: 'ЕЖЕДНЕВНЫЙ КВЕСТ'
             },
             {
                 selector: 'div.text-center > div',
+                oldText: 'WEEKLY QUEST',
+                newText: 'НЕДЕЛЬНЫЙ КВЕСТ'
+            },
+            {
+                selector: 'div.text-center > div',
                 oldText: 'WORLD EVENT',
-                newText: 'Мировое событие'
+                newText: 'МИРОВОЕ СОБЫТИЕ'
             },
             {
                 selector: 'h4',
@@ -158,6 +168,11 @@
                 newText: 'Скачать приложение'
             },
             {
+                selector: 'span',
+                oldText: 'Close',
+                newText: 'Закрыть'
+            },
+            {
                 selector: 'a',
                 oldText: 'Log in',
                 newText: 'Авторизоваться'
@@ -208,6 +223,16 @@
                 newText: '$1 ч.'
             },
             {
+                selector: 'span.text-muted',
+                oldText: /(\d+)w/g,
+                newText: '$1 н.'
+            },
+            {
+                selector: 'span.text-muted',
+                oldText: /(\d+)d/g,
+                newText: '$1 д.'
+            },
+            {
                 selector: 'div._subheading',
                 oldText: '',
                 newText: '',
@@ -242,6 +267,11 @@
                 newText: 'Лайкните пост, у которого уже 100 или более лайков'
             },
             {
+                selector: 'div.content-viewer.quest-stage-description-content p span',
+                oldText: 'Though a multitude, our hearts beat as one! Lend your support! Let\'s vanquish the darkness!',
+                newText: 'Пусть наши сердца бьются в унисон, даже в большой толпе! Поддержите нас! Давайте вместе победим тьму!'
+            },
+            {
                 selector: 'div.text-center > div',
                 oldText: 'Gift a sticker pack',
                 newText: 'ПОДАРИТЕ НАБОР НАКЛЕЕК'
@@ -250,6 +280,11 @@
                 selector: 'div._details > div',
                 oldText: 'Gift a sticker pack',
                 newText: 'Подарите набор наклеек'
+            },
+            {
+                selector: 'div.content-viewer.quest-stage-description-content p span',
+                oldText: 'Give your friend the gift of stickers!',
+                newText: 'Порадуйте своего друга наклейками!'
             },
             {
                 selector: 'div.text-center > div',
@@ -262,14 +297,99 @@
                 newText: 'Поставьте реакцию на 5 разных комментариев'
             },
             {
+                selector: 'div.content-viewer.quest-stage-description-content p span',
+                oldText: 'Anyone can react to a comment. Can you react to 5 different ones?',
+                newText: 'Каждый может поставить реакцию на комментарий. А сможете ли вы поставить на 5 разных?'
+            },
+            {
                 selector: 'div._subheading',
                 oldText: 'Active Quests',
-                newText: 'Активные квесты'
+                newText: 'АКТИВНЫЕ КВЕСТЫ'
+            },
+            {
+                selector: 'div.text-center > div',
+                oldText: 'Complete 10 daily quests',
+                newText: 'ЗАВЕРШИТЕ 10 ЕЖЕДНЕВНЫХ КВЕСТОВ'
+            },
+            {
+                selector: 'div._details > div',
+                oldText: 'Complete 10 daily quests',
+                newText: 'Завершите 10 ежедневных квестов'
+            },
+            {
+                selector: 'div.text-center > div',
+                oldText: 'A Transmission From Beyond the Stars',
+                newText: 'СООБЩЕНИЕ ИЗ ГЛУБИН КОСМОСА'
+            },
+            {
+                selector: 'div._details > div',
+                oldText: 'A Transmission From Beyond the Stars',
+                newText: 'Сообщение из глубин космоса '
+            },
+            {
+                selector: 'div.content-viewer.quest-stage-description-content p span',
+                oldText: 'You\'ve received a transmission from beyond the stars! An alien diplomat wants to introduce themselves to Earthlings.',
+                newText: 'Вы получили сигнал из-за пределов нашей галактики! Инопланетный дипломат хочет познакомиться с землянами.'
+            },
+            {
+                selector: 'div.content-viewer.quest-stage-description-content p span',
+                oldText: 'Send the alien our message of good will by liking',
+                newText: 'Пошлите ему наше мирное послание, поставив лайк '
+            },
+            {
+                selector: 'div.content-viewer.quest-stage-description-content p span',
+                oldText: 'this post',
+                newText: 'этому посту'
+            },
+            {
+                selector: 'div.content-viewer.quest-stage-description-content p span',
+                oldText: '. If you do, they\'ll give you coins and stickers!',
+                newText: '. В ответ он подарит вам монеты и наклейки!'
+            },
+            {
+                selector: 'div.text-center > div',
+                oldText: 'June Login Streak',
+                newText: 'ИЮНЬСКИЙ МАРАФОН ПОСЕЩЕНИЙ'
+            },
+            {
+                selector: 'div._details > div',
+                oldText: 'June Login Streak',
+                newText: 'Июньский марафон посещений'
+            },
+            {
+                selector: 'div.text-center > div',
+                oldText: 'Jule Login Streak',
+                newText: 'ИЮЛЬСКИЙ МАРАФОН ПОСЕЩЕНИЙ'
+            },
+            {
+                selector: 'div._details > div',
+                oldText: 'Jule Login Streak',
+                newText: 'Июльский марафон посещений'
+            },
+            {
+                selector: 'div.text-center > div',
+                oldText: 'August Login Streak',
+                newText: 'АВГУСТОВСКИЙ МАРАФОН ПОСЕЩЕНИЙ'
+            },
+            {
+                selector: 'div._details > div',
+                oldText: 'August Login Streak',
+                newText: 'Августовский марафон посещений'
+            },
+            {
+                selector: 'div.text-center > div',
+                oldText: 'September Login Streak',
+                newText: 'СЕНТЯБРЬСКИЙ МАРАФОН ПОСЕЩЕНИЙ'
+            },
+            {
+                selector: 'div._details > div',
+                oldText: 'September Login Streak',
+                newText: 'Сентябрьский марафон посещений'
             },
             {
                 selector: 'div._subheading',
                 oldText: 'Available Quests',
-                newText: 'Доступные квесты'
+                newText: 'ДОСТУПНЫЕ КВЕСТЫ'
             },
             {
                 selector: 'div.text-center > div',
@@ -280,16 +400,6 @@
                 selector: 'div.content-viewer.quest-stage-description-content p span',
                 oldText: 'Your choices will affect the outcome, good or bad, so choose carefully!',
                 newText: 'Ваши выборы повлияют на результат, будь он хорошим или плохим, так что выбирайте внимательно!'
-            },
-            {
-                selector: 'div.content-viewer.quest-stage-description-content p span',
-                oldText: 'Though a multitude, our hearts beat as one! Lend your support! Let\'s vanquish the darkness!',
-                newText: 'Пусть наши сердца бьются в унисон, даже в большой толпе! Поддержите нас! Давайте вместе победим тьму!'
-            },
-            {
-                selector: 'div.content-viewer.quest-stage-description-content p span',
-                oldText: 'Give your friend the gift of stickers!',
-                newText: 'Порадуйте своего друга наклейками!'
             },
             {
                 selector: 'div.content-viewer.quest-stage-description-content p span',
