@@ -2,6 +2,7 @@
 // @name         Русификатор Game Jolt
 // @namespace    http://tampermonkey.net/
 // @version      0.1.1
+// @icon         https://s.gjcdn.net/img/favicon.png
 // @description  Русифицирует Game Jolt
 // @author       Дефлекта, eiser_dip
 // @match        https://gamejolt.com/*
