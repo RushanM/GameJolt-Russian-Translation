@@ -1,13 +1,15 @@
 // ==UserScript==
-// @name         Русификатор Game Jolt
-// @namespace    http://tampermonkey.net/
-// @version      0.1.1
-// @icon         https://s.gjcdn.net/img/favicon.png
-// @description  Русифицирует Game Jolt
-// @author       Дефлекта, eiser_dip
-// @match        https://gamejolt.com/*
-// @match        https://*.gamejolt.com/*
-// @grant        none
+// @name           Game Jolt Russian Translation
+// @name:ru        Русификатор Game Jolt
+// @namespace      http://tampermonkey.net/
+// @version        0.1.1
+// @icon           https://s.gjcdn.net/img/favicon.png
+// @description    Adds Russian language support for Game Jolt.
+// @description:ru Русифицирует Game Jolt.
+// @author         Дефлекта, eiser_dip
+// @match          https://gamejolt.com/*
+// @match          https://*.gamejolt.com/*
+// @grant          none
 // ==/UserScript==
 
 (function() {
@@ -120,6 +122,11 @@
                 newText: 'КАТАЛОГ'
             },
             {
+                selector: 'div.-message',
+                oldText: 'Game Jolt\'s Store is an open platform to share your games with the world.',
+                newText: 'Каталог Game Jolt — это открытая платформа, в которой вы можете делиться своими играми с миром.'
+            },
+            {
                 selector: 'label[for="search-input-1"] span',
                 oldText: 'Search',
                 newText: 'Поиск'
@@ -131,9 +138,34 @@
                 attr: 'placeholder'
             },
             {
+                selector: 'div.-hero-text',
+                oldText: 'Join a growing community of creators and gamers from around the world!',
+                newText: 'Присоединяйтесь к растущему сообществу творцов и геймеров со всего мира!'
+            },
+            {
+                selector: 'span',
+                oldText: 'Sign up with Google',
+                newText: 'Зарегистрироваться через Google'
+            },
+            {
+                selector: 'div.auth-line-thru',
+                oldText: 'or',
+                newText: 'или'
+            },
+            {
                 selector: 'a',
                 oldText: 'Get App',
                 newText: 'Скачать приложение'
+            },
+            {
+                selector: 'a',
+                oldText: 'Log in',
+                newText: 'Авторизоваться'
+            },
+            {
+                selector: 'a',
+                oldText: 'Sign up',
+                newText: 'Зарегистрироваться'
             },
             {
                 selector: 'div.use-fira',
