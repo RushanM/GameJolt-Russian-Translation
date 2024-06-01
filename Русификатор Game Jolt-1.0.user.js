@@ -12,27 +12,27 @@
 (function() {
     'use strict';
 
-    // Добавляем шрифт Inter и Fira в документ
-    const linkInter = document.createElement('link');
-    linkInter.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap';
-    linkInter.rel = 'stylesheet';
-    document.head.appendChild(linkInter);
+    // Добавляем шрифты и CSS-правила
+    const fonts = [
+        'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap',
+        'https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@600&display=swap'
+    ];
+    fonts.forEach(href => {
+        const link = document.createElement('link');
+        link.href = href;
+        link.rel = 'stylesheet';
+        document.head.appendChild(link);
+    });
 
-    const linkFira = document.createElement('link');
-    linkFira.href = 'https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@600&display=swap';
-    linkFira.rel = 'stylesheet';
-    document.head.appendChild(linkFira);
-
-    // Добавляем CSS-правила для изменения шрифта на Inter и Fira
     const style = document.createElement('style');
     style.textContent = `
         body {
             font-family: 'Inter', sans-serif !important;
         }
-            .use-fira {
+        .use-fira {
             font-family: 'Fira Sans Condensed', sans-serif !important;
-            }
-`;
+        }
+    `;
 
     document.head.appendChild(style);
 
@@ -206,6 +206,11 @@
                 oldText: 'You\'ll also get a Welcome to Game Jolt pack after you\'ve placed 11 charged stickers.',
                 newText: 'Также вы получите набор «Добро пожаловать на Game Jolt» после размещения 11 заряженных наклеек.'
             },
+            {
+                selector: 'div.-page-cut-bottom.page-cut .page-cut-content .button.-trans',
+                oldText: 'Read article',
+                newText: 'Читать статью'
+            },
         ];
 
         replacements.forEach(({
@@ -233,30 +238,41 @@
             element.classList.add('use-fira');
         });
 
-        // Название вкладки
-        if (document.title.includes(' - ')) {
-            document.title = document.title.replace(' - ', ' — ');
-        }
+        // Обработка заголовков страниц
+        const titleReplacements = [{
+                oldText: ' - ',
+                newText: ' — '
+            },
+            {
+                oldText: 'Share your creations',
+                newText: 'Делитесь своим творчеством'
+            },
+            {
+                oldText: 'Fan art, videos, guides, polls and more',
+                newText: 'Фан-арт, видео, руководства, опросы и многое другое'
+            },
+            {
+                oldText: ' Community',
+                newText: ' (сообщество)'
+            },
+            {
+                oldText: 'Fairy Kingdom of King Froggold II',
+                newText: 'Сказочное королевство короля Фроггольда II'
+            },
+            {
+                oldText: 'Pokémon',
+                newText: 'Покемон'
+            }
+        ];
 
-        if (document.title.includes('Share your creations')) {
-            document.title = document.title.replace('Share your creations', 'Делитесь своим творчеством');
-        }
-
-        if (document.title.includes('Fan art, videos, guides, polls and more')) {
-            document.title = document.title.replace('Fan art, videos, guides, polls and more', 'Фан-арт, видео, руководства, опросы и многое другое');
-        }
-
-        if (document.title.includes(' Community')) {
-            document.title = document.title.replace(' Community', ' (сообщество)');
-        }
-
-        if (document.title.includes('Fairy Kingdom of King Froggold II')) {
-            document.title = document.title.replace('Fairy Kingdom of King Froggold II', 'Сказочное королевство короля Фроггольда II');
-        }
-
-        if (document.title.includes('Pokémon')) {
-            document.title = document.title.replace('Pokémon', 'Покемон');
-        }
+        titleReplacements.forEach(({
+            oldText,
+            newText
+        }) => {
+            if (document.title.includes(oldText)) {
+                document.title = document.title.replace(oldText, newText);
+            }
+        });
 
         // Игры
         // (Official)
@@ -318,17 +334,12 @@
         timeout = setTimeout(replaceText, 0); // задержка
     });
 
-    // Наблюдаем только за основными узлами, где могут происходить изменения
-    const targetNodes = [
-        document.querySelector('body'),
-    ];
-
-    targetNodes.forEach(node => {
-        if (node) {
-            observer.observe(node, {
-                childList: true,
-                subtree: true
-            });
-        }
-    });
+    // Наблюдаем за изменениями в основном узле
+    const targetNode = document.body;
+    if (targetNode) {
+        observer.observe(targetNode, {
+            childList: true,
+            subtree: true
+        });
+    }
 })();
