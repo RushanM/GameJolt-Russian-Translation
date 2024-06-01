@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Русификатор Game Jolt
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.1.1
 // @description  Русифицирует Game Jolt
 // @author       Дефлекта, eiser_dip
 // @match        https://gamejolt.com/*
@@ -69,6 +69,11 @@
                 newText: 'ЕЖЕДНЕВНЫЙ КВЕСТ'
             },
             {
+                selector: 'div.text-center > div',
+                oldText: 'WORLD EVENT',
+                newText: 'Мировое событие'
+            },
+            {
                 selector: 'h4',
                 oldText: 'Daily Quests',
                 newText: 'Ежедневные квесты'
@@ -99,6 +104,16 @@
                 newText: 'Для вас'
             },
             {
+                selector: 'div.-username',
+                oldText: 'Hey',
+                newText: 'Ъуъ, '
+            },
+            {
+                selector: 'div.-input',
+                oldText: 'So, what\'s on your mind?',
+                newText: 'Что у вас на уме?'
+            },
+            {
                 selector: 'nav#shell-top-nav a strong',
                 oldText: 'Store',
                 newText: 'КАТАЛОГ'
@@ -118,6 +133,21 @@
                 selector: 'a',
                 oldText: 'Get App',
                 newText: 'Скачать приложение'
+            },
+            {
+                selector: 'div.use-fira',
+                oldText: 'Joltbux',
+                newText: 'Джолтбаксы'
+            },
+            {
+                selector: 'div.use-fira',
+                oldText: 'Coins',
+                newText: 'Монеты'
+            },
+            {
+                selector: 'div.fill-offset > h2',
+                oldText: 'Pride Month 2024',
+                newText: 'МЕСЯЦ ГОРДОСТИ 2024'
             },
             {
                 selector: 'div.tooltip-inner',
@@ -157,9 +187,26 @@
                 addClass: 'use-fira'
             },
             {
+                selector: 'div._details > div',
+                oldText: '',
+                newText: '',
+                addClass: 'use-fira'
+            },
+            {
+                selector: 'div.fill-offset > h2',
+                oldText: '',
+                newText: '',
+                addClass: 'use-fira'
+            },
+            {
                 selector: 'div.text-center > div',
                 oldText: 'Like a post with 100 or more likes on it',
                 newText: 'ЛАЙКНИТЕ ПОСТ, У КОТОРОГО УЖЕ 100 ИЛИ БОЛЕЕ ЛАЙКОВ'
+            },
+            {
+                selector: 'div._details > div',
+                oldText: 'Like a post with 100 or more likes on it',
+                newText: 'Лайкните пост, у которого уже 100 или более лайков'
             },
             {
                 selector: 'div.text-center > div',
@@ -167,13 +214,33 @@
                 newText: 'ПОДАРИТЕ НАБОР НАКЛЕЕК'
             },
             {
+                selector: 'div._details > div',
+                oldText: 'Gift a sticker pack',
+                newText: 'Подарите набор наклеек'
+            },
+            {
                 selector: 'div.text-center > div',
                 oldText: 'React to 5 different comments',
                 newText: 'ПОСТАВЬТЕ РЕАКЦИЮ НА 5 РАЗНЫХ КОММЕНТАРИЕВ'
             },
             {
-                selector: 'div.text-center > div',
+                selector: 'div._details > div',
                 oldText: 'React to 5 different comments',
+                newText: 'Поставьте реакцию на 5 разных комментариев'
+            },
+            {
+                selector: 'div._subheading',
+                oldText: 'Active Quests',
+                newText: 'Активные квесты'
+            },
+            {
+                selector: 'div._subheading',
+                oldText: 'Available Quests',
+                newText: 'Доступные квесты'
+            },
+            {
+                selector: 'div.text-center > div',
+                oldText: 'Summon the Power of Lightning',
                 newText: 'ПРИЗОВИТЕ СИЛУ МОЛНИИ'
             },
             {
