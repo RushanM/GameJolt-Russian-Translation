@@ -349,8 +349,8 @@
             }
         });
 
-        // Названия игр
-        // (Official)
+        // Начало — Названия игр
+        // Начало — Различные замены official на «официальная»
         document.querySelectorAll('div.-title[title*="(Official)"]').forEach((element) => {
             if (element.title.includes('(Official)')) {
                 element.title = element.title.replace('(Official)', '(официальная)');
@@ -359,35 +359,39 @@
                 element.textContent = element.textContent.replace('(Official)', '(официальная)');
             }
         });
-
-        // (Cancelled)
+        // Конец — Различные замены official на «официальная»
+        // Начало — Различные замены cancelled на «отменена»
         document.querySelectorAll('div.-title').forEach((element) => {
-            const regex = /(\[|\()?(\s*CANCELLED\s*|\s*cancelled\s*|\s*Cancelled\s*)(\]|\))?/gi;
-            const fullTextRegex = /^\s*CANCELLED\s*$/i;
+            const anyCancelledWordForm = /(\[|\()?(\s*CANCELLED\s*|\s*cancelled\s*|\s*Cancelled\s*)(\]|\))?/gi;
+            const cancelledIsFullWord = /^\s*CANCELLED\s*$/i;
 
             const replaceText = (text) => {
-                return text.replace(regex, (match, p1, p2, p3) => {
+                return text.replace(anyCancelledWordForm, (match, p1, p2, p3) => {
+                    // > Код определяется со скобками >
                     const prefix = p1 || '';
                     const suffix = p3 || '';
+                    // > Объявдение переменной замены >
                     let replacement = `${prefix}отменена${suffix}`;
+                    // > Проверка пробелов во всём названии >
                     replacement = replacement.replace(/\s+/g, ' ').trim();
-
+                    // > Проверка на скобированное cancelled в начале названия >
                     if (/^\s*(\(\s*CANCELLED\s*\)|\[\s*CANCELLED\s*\])/.test(text)) {
+                        // > Скобированное cancelled в начале названия будет написано с заглавной буквы >
                         replacement = `${prefix}Отменена${suffix}`;
                     }
                     return replacement;
                 }).replace(/([^\s])(\[|\()/g, '$1 $2');
             };
 
-            if (!fullTextRegex.test(element.textContent)) {
+            if (!cancelledIsFullWord.test(element.textContent)) {
                 element.textContent = replaceText(element.textContent);
             }
-            if (!fullTextRegex.test(element.title)) {
+            if (!cancelledIsFullWord.test(element.title)) {
                 element.title = replaceText(element.title);
             }
         });
-
-        // ELLIE'S
+        // Конец — Различные замены cancelled на «отменена»
+        // Начало — Замена ELLIE'S на «ЭЛЛИС»
         document.querySelectorAll('div.-title[title*="ELLIE\'S"]').forEach((element) => {
             if (element.title.includes('ELLIE\'S')) {
                 element.title = element.title.replace('ELLIE\'S', 'ЭЛЛИС');
@@ -396,6 +400,8 @@
                 element.textContent = element.textContent.replace('ELLIE\'S', 'ЭЛЛИС');
             }
         });
+        // Конец — Замена ELLIE'S на «ЭЛЛИС»
+        // Конец — Названия игр
     }
 
     // Замена изображения
