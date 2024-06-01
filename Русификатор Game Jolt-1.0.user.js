@@ -349,7 +349,7 @@
             }
         });
 
-        // Игры
+        // Названия игр
         // (Official)
         document.querySelectorAll('div.-title[title*="(Official)"]').forEach((element) => {
             if (element.title.includes('(Official)')) {
@@ -360,7 +360,7 @@
             }
         });
 
-        // Заменяем CANCELLED независимо от регистра и наличия скобок и добавляем пробел перед скобками, если его нет
+        // (Cancelled)
         document.querySelectorAll('div.-title').forEach((element) => {
             const regex = /(\[|\()?(\s*CANCELLED\s*|\s*cancelled\s*|\s*Cancelled\s*)(\]|\))?/gi;
             const fullTextRegex = /^\s*CANCELLED\s*$/i;
@@ -372,12 +372,11 @@
                     let replacement = `${prefix}отменена${suffix}`;
                     replacement = replacement.replace(/\s+/g, ' ').trim();
 
-                    // Если CANCELLED в начале текста, заменяем на «Отменена»
                     if (/^\s*(\(\s*CANCELLED\s*\)|\[\s*CANCELLED\s*\])/.test(text)) {
                         replacement = `${prefix}Отменена${suffix}`;
                     }
                     return replacement;
-                }).replace(/([^\s])(\[|\()/g, '$1 $2'); // Вставляем пробел перед скобками, если его нет
+                }).replace(/([^\s])(\[|\()/g, '$1 $2');
             };
 
             if (!fullTextRegex.test(element.textContent)) {
