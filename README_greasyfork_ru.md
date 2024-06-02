@@ -1,6 +1,6 @@
 # Русификатор Game Jolt
 <center>
-    <img title="Обзор перевода" alt="Обзор перевода" height="350" src="https://github.com/RushanM/GameJolt-Russian-Translation/blob/main/cover.png?raw=true">
+    <img title="Обзор перевода" alt="Обзор перевода" src="https://github.com/RushanM/GameJolt-Russian-Translation/blob/main/cover.png?raw=true">
 </center>
 
 Русификатор [Game Jolt](https://gamejolt.com/), реализованный в виде скрипта для [Tampermonkey](https://github.com/Tampermonkey/tampermonkey).

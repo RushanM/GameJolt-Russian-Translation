@@ -1,6 +1,6 @@
 # Game Jolt Russian Translation
 <center>
-    <img title="Translation overview" alt="Translation overview" height="350" src="https://github.com/RushanM/GameJolt-Russian-Translation/blob/main/cover.png?raw=true">
+    <img title="Translation overview" alt="Translation overview" src="https://github.com/RushanM/GameJolt-Russian-Translation/blob/main/cover.png?raw=true">
 </center>
 
 This is a Russian language script for [Game Jolt](https://gamejolt.com/), implemented as a script for [Tampermonkey](https://github.com/Tampermonkey/tampermonkey).

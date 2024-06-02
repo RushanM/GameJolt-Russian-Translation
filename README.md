@@ -1,6 +1,6 @@
 # Русификатор Game Jolt
 <div align="center">
-    <img title="Обзор перевода" alt="Обзор перевода" height="350" src="cover.png">
+    <img title="Обзор перевода" alt="Обзор перевода" src="cover.png">
 </div>
 <br>
 
