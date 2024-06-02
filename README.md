@@ -1,18 +1,7 @@
 # Русификатор Game Jolt
-<div class="image-container">
-    <img class="cover-image" title="Обзор перевода" alt="Обзор перевода" src="cover.png">
+<div style="text-align: center;">
+    <img title="Обзор перевода" alt="Обзор перевода" height="250" src="cover.png">
 </div>
-
-<style>
-.image-container {
-    text-align: center;
-}
-
-.cover-image {
-    height: auto;
-    max-height: 250px;
-}
-</style>
 <br>
 
 Русификатор [Game Jolt](https://gamejolt.com/), реализованный в виде скрипта для [Tampermonkey](https://github.com/Tampermonkey/tampermonkey).
