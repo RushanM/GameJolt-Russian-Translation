@@ -6,7 +6,7 @@
 
 Русификатор [Game Jolt](https://gamejolt.com/), реализованный в виде скрипта для [Tampermonkey](https://github.com/Tampermonkey/tampermonkey).
 
-Текущая версия: **0.1 Indev.**
+Текущая версия: **0.2 Indev.**
 
 ## Установка
 
