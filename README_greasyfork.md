@@ -1,24 +1,24 @@
-# Русификатор Game Jolt
+# Game Jolt Russian Translation
 <center>
-    <img title="Обзор перевода" alt="Обзор перевода" height="350" src="https://github.com/RushanM/GameJolt-Russian-Translation/blob/main/cover.png?raw=true">
+    <img title="Translation overview" alt="Translation overview" height="350" src="https://github.com/RushanM/GameJolt-Russian-Translation/blob/main/cover.png?raw=true">
 </center>
 
-Русификатор [Game Jolt](https://gamejolt.com/), реализованный в виде скрипта для [Tampermonkey](https://github.com/Tampermonkey/tampermonkey).
+This is a Russian language script for [Game Jolt](https://gamejolt.com/), implemented as a script for [Tampermonkey](https://github.com/Tampermonkey/tampermonkey).
 
-Текущая версия: **0.2 Indev.**
+Current version: **0.2 Indev.**
 
-## Установка
+## Installation
 
-1. Установите Tampermonkey
-2. Откройте ссылку на скрипт c [GitHub](https://github.com/RushanM/GameJolt-Russian-Translation/raw/main/%D0%A0%D1%83%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80%20Game%20Jolt.user.js) или [GreasyFork](https://greasyfork.org/ru/scripts/496844-game-jolt-russian-translation)
-3. Обновите страницу Game Jolt, если она была открыта
-4. Готово!
+1. Install Tampermonkey.
+2. Open the script link from [GitHub](https://github.com/RushanM/GameJolt-Russian-Translation/raw/main/%D0%A0%D1%83%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80%20Game%20Jolt.user.js) or [GreasyFork](https://greasyfork.org/ru/scripts/496844-game-jolt-russian-translation)
+3. Refresh the Game Jolt page if it was already open.
+4. Done!
 
-## Материальная поддержка
-Если моя работа нравится вам настолько, что вы готовы отправить мне деньги, можно сделать это по следующим ссылкам:
+## Support My Work
+If you appreciate my work and would like to support me, you can do so through the following links:
 * [Boosty](https://boosty.to/rushanm)
-* [VK Pay](https://vk.me/moneysend/deflecta)
 * [Donation Alerts](https://www.donationalerts.com/r/deflecta)
-* [ЮMoney](https://yoomoney.ru/to/410015215253910)
+* [YooMoney](https://yoomoney.ru/to/410015215253910)
+* [VK Pay](https://vk.me/moneysend/deflecta)
 
-Буду благодарен за каждый рубль!
+I'm grateful for every ruble!
