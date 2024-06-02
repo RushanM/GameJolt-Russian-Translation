@@ -2,9 +2,9 @@
 // @name           Game Jolt Russian Translation
 // @name:ru        Русификатор Game Jolt
 // @namespace      http://tampermonkey.net/
-// @version        0.3
+// @version        0.4
 // @icon           https://s.gjcdn.net/img/favicon.png
-// @description    Adds Russian language support for Game Jolt.
+// @description    Adds Russian language to Game Jolt.
 // @description:ru Русифицирует Game Jolt.
 // @author         Дефлекта, eiser_dip
 // @match          https://gamejolt.com/*
@@ -104,6 +104,81 @@
                 selector: 'span.user-dogtag.tag.tag-highlight',
                 oldText: 'Dev',
                 newText: 'Разраб'
+            },
+            {
+                selector: 'span.user-dogtag.tag.tag-highlight',
+                oldText: 'GMR',
+                newText: 'Игрок'
+            },
+            {
+                selector: 'span.user-dogtag.tag.tag-highlight',
+                oldText: 'MOD',
+                newText: 'Модер'
+            },
+            {
+                selector: 'span.user-dogtag.tag.user-dogtag-guy',
+                oldText: 'GUY',
+                newText: 'Чел'
+            },
+            {
+                selector: 'span.user-dogtag.tag.tag-highlight',
+                oldText: 'ELF',
+                newText: 'Эльф'
+            },
+            {
+                selector: 'span.user-dogtag.tag.tag-highlight',
+                oldText: 'BUG',
+                newText: 'Баг'
+            },
+            {
+                selector: 'span.user-dogtag.tag.tag-highlight',
+                oldText: 'She',
+                newText: 'Она'
+            },
+            {
+                selector: 'span.user-dogtag.tag.tag-highlight',
+                oldText: 'Her',
+                newText: 'Ей'
+            },
+            {
+                selector: 'span.user-dogtag.tag.tag-highlight',
+                oldText: 'He',
+                newText: 'Он'
+            },
+            {
+                selector: 'span.user-dogtag.tag.tag-highlight',
+                oldText: 'Him',
+                newText: 'Ему'
+            },
+            {
+                selector: 'span.user-dogtag.tag.tag-highlight',
+                oldText: 'They',
+                newText: 'Они'
+            },
+            {
+                selector: 'span.user-dogtag.tag.tag-highlight',
+                oldText: 'Them',
+                newText: 'Им'
+            },
+            {
+                selector: 'span.tag.tag-highlight',
+                oldText: 'Follows you',
+                newText: 'Ваш подписчик'
+            },
+            {
+                selector: 'span.tag.tag-highlight',
+                oldText: 'Friend',
+                newText: 'Друг'
+            },
+            {
+                selector: 'span.tag',
+                oldText: 'Offline',
+                newText: 'Офлайн'
+            },
+            {
+                selector: 'span.tag.tag-highlight',
+                oldText: 'Online',
+                newText: 'В сети'
             },
             {
                 selector: 'nav#shell-top-nav a strong',
@@ -230,6 +305,11 @@
                 selector: 'div.tooltip-inner',
                 oldText: 'Notifications',
                 newText: 'Уведомления'
+            },
+            {
+                selector: '.timeline-list-item-title, .timeline-list-item-meta',
+                oldText: 'replied to your comment on',
+                newText: 'ответил на ваш комментарий на странице'
             },
             {
                 selector: 'div.tooltip-inner',
@@ -570,6 +650,22 @@
                     element.classList.add('use-fira');
                 });
 
+            // Дополнительные замены для точной даты
+            const timeElements = document.querySelectorAll('span[title]');
+            timeElements.forEach(element => {
+                const timestamp = new Date(element.title);
+                const formattedDate = new Intl.DateTimeFormat('ru-RU', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric',
+                    hour: 'numeric',
+                    minute: 'numeric',
+                    second: 'numeric'
+                }).format(timestamp);
+
+                element.textContent = formattedDate;
+            });
+
             // Массив переводов названий вкладки
             const titleReplacements = 
                 [
@@ -707,5 +803,4 @@
             subtree: true
         });
     }
-
 })();
