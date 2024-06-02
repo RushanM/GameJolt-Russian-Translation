@@ -2,7 +2,7 @@
 // @name           Game Jolt Russian Translation
 // @name:ru        Русификатор Game Jolt
 // @namespace      http://tampermonkey.net/
-// @version        0.2
+// @version        0.3
 // @icon           https://s.gjcdn.net/img/favicon.png
 // @description    Adds Russian language support for Game Jolt.
 // @description:ru Русифицирует Game Jolt.
@@ -14,13 +14,15 @@
 // ==/UserScript==
 
 (function() {
+    // Строгий режим
     'use strict';
 
-    // Добавляем шрифты и CSS-правила
+    // Шрифты
     const fonts = [
         'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap',
         'https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@600&display=swap'
     ];
+
     fonts.forEach(href => {
         const link = document.createElement('link');
         link.href = href;
@@ -40,9 +42,10 @@
 
     document.head.appendChild(style);
 
-    // Функция для замены текста
-    function replaceText() {
-        const replacements = [{
+    // Массив основных переводов
+    const replacements = 
+        [
+            {
                 selector: 'div.-header-lead-text.-main-header-text',
                 oldText: 'Become a Game Jolt Creator',
                 newText: 'СТАНЬ ТВОРЦОМ НА GAME JOLT'
@@ -108,6 +111,11 @@
                 newText: 'ОБЗОР'
             },
             {
+                selector: 'div.-member-counts a',
+                oldText: 'members',
+                newText: 'участников'
+            },
+            {
                 selector: 'nav.-menu a span',
                 oldText: 'Following',
                 newText: 'Подписки'
@@ -126,6 +134,16 @@
                 selector: 'div.-input',
                 oldText: 'So, what\'s on your mind?',
                 newText: 'Что у вас на уме?'
+            },
+            {
+                selector: 'div.-input',
+                oldText: 'Share your creations!',
+                newText: 'Поделитесь тем, что сделали!'
+            },
+            {
+                selector: 'div.-input',
+                oldText: 'Keep it related to POPGOES!',
+                newText: 'Пост должен быть связан с POPGOES!'
             },
             {
                 selector: 'nav#shell-top-nav a strong',
@@ -167,6 +185,16 @@
                 selector: 'a',
                 oldText: 'Get App',
                 newText: 'Скачать приложение'
+            },
+            {
+                selector: 'h5.section-header',
+                oldText: 'Games',
+                newText: 'Игры'
+            },
+            {
+                selector: 'h5.section-header',
+                oldText: 'Collaborators',
+                newText: 'Модераторы'
             },
             {
                 selector: 'span',
@@ -471,149 +499,180 @@
                 selector: 'h2.-content-row-header small',
                 oldText: 'Follow and support your favorite creators on Game Jolt!',
                 newText: 'Следите за своими любимыми творцами на Game Jolt и поддерживайте их!'
+            },
+            {
+                selector: 'div.-header-lead-text.-main-header-text',
+                oldText: '',
+                newText: '',
+                addClass: 'use-fira'
+            },
+            {
+                selector: 'div.-header-lead-text.-main-header-text',
+                oldText: 'Become a Game Jolt Creator',
+                newText: 'СТАНЬТЕ ТВОРЦОМ НА GAME JOLT'
+            },
+            {
+                selector: 'div.content-viewer.community-description-content span',
+                oldText: 'Community of GKProduction games players',
+                newText: 'Сообщество игроков игр GKProduction'
             }
         ];
 
-        // Замена текста Become a Game Jolt Creator
-        const headerText = document.querySelector('div.-header-lead-text.-main-header-text');
-        if (headerText && headerText.textContent.trim() === 'Become a Game Jolt Creator') {
-            headerText.textContent = 'СТАНЬТЕ ТВОРЦОМ НА GAME JOLT';
-            headerText.style.fontFamily = "'Fira Sans Condensed', sans-serif";
-        }
+    // Функция перевода
+    function translateText(replacements)
+        {
+            // Применяем шрифт Inter ко всем элементам <small> внутри <h2> с классом «-content-row-header»
+            const headerElements = document.querySelectorAll('h2.-content-row-header');
+            headerElements.forEach(headerElement =>
+                {
+                    const smallElements = headerElement.querySelectorAll('small');
+                    smallElements.forEach(smallElement =>
+                        {
+                            smallElement.style.fontFamily = 'Inter, sans-serif';
+                        });
+                });
 
-        // Применяем шрифт Inter ко всем элементам <small> внутри <h2> с классом "-content-row-header"
-        const headerElements = document.querySelectorAll('h2.-content-row-header');
-        headerElements.forEach(headerElement => {
-            const smallElements = headerElement.querySelectorAll('small');
-            smallElements.forEach(smallElement => {
-                smallElement.style.fontFamily = 'Inter, sans-serif';
-            });
-        });
+            replacements.forEach(({selector, oldText, newText, attr = 'textContent', addClass}) =>
+                {
+                    const elements = document.querySelectorAll(selector);
+                    elements.forEach(element =>
+                        {
+                            if (typeof oldText === 'string')
+                                {
+                                    if (element[attr].trim() === oldText)
+                                        {
+                                            element[attr] = newText;
+                                        }
 
-        replacements.forEach(({
-            selector,
-            oldText,
-            newText,
-            attr = 'textContent',
-            addClass
-        }) => {
-            const elements = document.querySelectorAll(selector);
-            elements.forEach(element => {
-                if (typeof oldText === 'string') {
-                    if (element[attr].trim() === oldText) {
-                        element[attr] = newText;
+                                    if (element.textContent.includes(oldText))
+                                        {
+                                            element.innerHTML = element.innerHTML.replace(oldText, newText);
+                                        }
+                                }
+                                else
+                                    if (oldText instanceof RegExp)
+                                        {
+                                            element[attr] = element[attr].replace(oldText, newText);
+                                        }
+                        });
+
+                    if (addClass) {
+                        elements.forEach(element =>
+                            {
+                                element.classList.add(addClass);
+                            });
                     }
+                });
 
-                    if (element.textContent.includes(oldText)) {
-                        element.innerHTML = element.innerHTML.replace(oldText, newText);
+            // Применяем класс для использования шрифта Fira Sans
+            document.querySelectorAll('div[style*="Staatliches"]').forEach((element) =>
+                {
+                    element.classList.add('use-fira');
+                });
+
+            // Массив переводов названий вкладки
+            const titleReplacements = 
+                [
+                    {
+                        oldText: ' - ',
+                        newText: ' — '
+                    },
+                    {
+                        oldText: 'Share your creations',
+                        newText: 'Делитесь своим творчеством'
+                    },
+                    {
+                        oldText: 'Fan art, videos, guides, polls and more',
+                        newText: 'Фан-арт, видео, руководства, опросы и многое другое'
+                    },
+                    {
+                        oldText: ' Community',
+                        newText: ' (сообщество)'
+                    },
+                    {
+                        oldText: 'Fairy Kingdom of King Froggold II',
+                        newText: 'Сказочное королевство короля Фроггольда II'
+                    },
+                    {
+                        oldText: 'Five Nights with Barsik',
+                        newText: 'Пять ночей с Барсиком'
+                    },
+                    {
+                        oldText: 'Mystery Chamber',
+                        newText: 'Тайная Комната'
+                    },
+                    {
+                        oldText: 'Godzilla',
+                        newText: 'Годзилла'
+                    },
+                    {
+                        oldText: 'Pokémon',
+                        newText: 'Покемон'
                     }
-                } else if (oldText instanceof RegExp) {
-                    element[attr] = element[attr].replace(oldText, newText);
+                ];
+
+            titleReplacements.forEach(({
+                oldText,
+                newText
+            }) => {
+                if (document.title.includes(oldText)) {
+                    document.title = document.title.replace(oldText, newText);
                 }
             });
 
-            if (addClass) {
-                elements.forEach(element => {
-                    element.classList.add(addClass);
-                });
-            }
-        });
+            // Названия игр
 
-        // Применение класса для использования шрифта Fira Sans
-        document.querySelectorAll('div[style*="Staatliches"]').forEach((element) => {
-            element.classList.add('use-fira');
-        });
+            // Различные замены official на «официальная»
+            document.querySelectorAll('div.-title[title*="(Official)"]').forEach((element) => {
+                if (element.title.includes('(Official)')) {
+                    element.title = element.title.replace('(Official)', '(официальная)');
+                }
+                if (element.textContent.includes('(Official)')) {
+                    element.textContent = element.textContent.replace('(Official)', '(официальная)');
+                }
+            });
 
-        // Обработка заголовков страниц
-        const titleReplacements = [{
-                oldText: ' - ',
-                newText: ' — '
-            },
-            {
-                oldText: 'Share your creations',
-                newText: 'Делитесь своим творчеством'
-            },
-            {
-                oldText: 'Fan art, videos, guides, polls and more',
-                newText: 'Фан-арт, видео, руководства, опросы и многое другое'
-            },
-            {
-                oldText: ' Community',
-                newText: ' (сообщество)'
-            },
-            {
-                oldText: 'Fairy Kingdom of King Froggold II',
-                newText: 'Сказочное королевство короля Фроггольда II'
-            },
-            {
-                oldText: 'Pokémon',
-                newText: 'Покемон'
-            }
-        ];
+            // Различные замены cancelled на «отменена»
+            document.querySelectorAll('div.-title').forEach((element) => {
+                const anyCancelledWordForm = /(\[|\()?(\s*CANCELLED\s*|\s*cancelled\s*|\s*Cancelled\s*)(\]|\))?/gi;
+                const cancelledIsFullWord = /^\s*CANCELLED\s*$/i;
 
-        titleReplacements.forEach(({
-            oldText,
-            newText
-        }) => {
-            if (document.title.includes(oldText)) {
-                document.title = document.title.replace(oldText, newText);
-            }
-        });
+                const translateText = (text) => {
+                    return text.replace(anyCancelledWordForm, (match, p1, p2, p3) => {
+                        // > Код определяется со скобками >
+                        const prefix = p1 || '';
+                        const suffix = p3 || '';
+                        // > Объявдение переменной замены >
+                        let replacement = `${prefix}отменена${suffix}`;
+                        // > Проверка пробелов во всём названии >
+                        replacement = replacement.replace(/\s+/g, ' ').trim();
+                        // > Проверка на скобированное cancelled в начале названия >
+                        if (/^\s*(\(\s*CANCELLED\s*\)|\[\s*CANCELLED\s*\])/.test(text)) {
+                            // > Скобированное cancelled в начале названия будет написано с заглавной буквы >
+                            replacement = `${prefix}Отменена${suffix}`;
+                        }
+                        return replacement;
+                    }).replace(/([^\s])(\[|\()/g, '$1 $2');
+                };
 
-        // Начало — Названия игр
-        // Начало — Различные замены official на «официальная»
-        document.querySelectorAll('div.-title[title*="(Official)"]').forEach((element) => {
-            if (element.title.includes('(Official)')) {
-                element.title = element.title.replace('(Official)', '(официальная)');
-            }
-            if (element.textContent.includes('(Official)')) {
-                element.textContent = element.textContent.replace('(Official)', '(официальная)');
-            }
-        });
-        // Конец — Различные замены official на «официальная»
-        // Начало — Различные замены cancelled на «отменена»
-        document.querySelectorAll('div.-title').forEach((element) => {
-            const anyCancelledWordForm = /(\[|\()?(\s*CANCELLED\s*|\s*cancelled\s*|\s*Cancelled\s*)(\]|\))?/gi;
-            const cancelledIsFullWord = /^\s*CANCELLED\s*$/i;
+                if (!cancelledIsFullWord.test(element.textContent)) {
+                    element.textContent = translateText(element.textContent);
+                }
+                if (!cancelledIsFullWord.test(element.title)) {
+                    element.title = translateText(element.title);
+                }
+            });
 
-            const replaceText = (text) => {
-                return text.replace(anyCancelledWordForm, (match, p1, p2, p3) => {
-                    // > Код определяется со скобками >
-                    const prefix = p1 || '';
-                    const suffix = p3 || '';
-                    // > Объявдение переменной замены >
-                    let replacement = `${prefix}отменена${suffix}`;
-                    // > Проверка пробелов во всём названии >
-                    replacement = replacement.replace(/\s+/g, ' ').trim();
-                    // > Проверка на скобированное cancelled в начале названия >
-                    if (/^\s*(\(\s*CANCELLED\s*\)|\[\s*CANCELLED\s*\])/.test(text)) {
-                        // > Скобированное cancelled в начале названия будет написано с заглавной буквы >
-                        replacement = `${prefix}Отменена${suffix}`;
-                    }
-                    return replacement;
-                }).replace(/([^\s])(\[|\()/g, '$1 $2');
-            };
-
-            if (!cancelledIsFullWord.test(element.textContent)) {
-                element.textContent = replaceText(element.textContent);
-            }
-            if (!cancelledIsFullWord.test(element.title)) {
-                element.title = replaceText(element.title);
-            }
-        });
-        // Конец — Различные замены cancelled на «отменена»
-        // Начало — Замена ELLIE'S на «ЭЛЛИС»
-        document.querySelectorAll('div.-title[title*="ELLIE\'S"]').forEach((element) => {
-            if (element.title.includes('ELLIE\'S')) {
-                element.title = element.title.replace('ELLIE\'S', 'ЭЛЛИС');
-            }
-            if (element.textContent.includes('ELLIE\'S')) {
-                element.textContent = element.textContent.replace('ELLIE\'S', 'ЭЛЛИС');
-            }
-        });
-        // Конец — Замена ELLIE'S на «ЭЛЛИС»
-        // Конец — Названия игр
-    }
+            // Замена ELLIE'S на «ЭЛЛИС»
+            document.querySelectorAll('div.-title[title*="ELLIE\'S"]').forEach((element) => {
+                if (element.title.includes('ELLIE\'S')) {
+                    element.title = element.title.replace('ELLIE\'S', 'ЭЛЛИС');
+                }
+                if (element.textContent.includes('ELLIE\'S')) {
+                    element.textContent = element.textContent.replace('ELLIE\'S', 'ЭЛЛИС');
+                }
+            });
+        }
 
     // Замена изображения
     function replaceImage() {
@@ -625,18 +684,19 @@
 
     // Замена текста и изображения после загрузки DOM
     document.addEventListener('DOMContentLoaded', () => {
-        replaceText();
-        replaceImage();
+        translateText(replacements);
+        replaceImage()
     });
 
     // Оптимизация MutationObserver
     let timeout;
     const observer = new MutationObserver(() => {
         clearTimeout(timeout);
-        timeout = setTimeout(() => {
-            replaceText();
-            replaceImage();
-        }, 0); // задержка
+        timeout = setTimeout(() => 
+            {
+                translateText(replacements);
+                replaceImage()
+            }, 0); // задержка
     });
 
     // Наблюдаем за изменениями в основном узле
@@ -647,4 +707,5 @@
             subtree: true
         });
     }
+
 })();
