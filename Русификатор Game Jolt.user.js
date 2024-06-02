@@ -10,6 +10,7 @@
 // @match          https://gamejolt.com/*
 // @match          https://*.gamejolt.com/*
 // @grant          none
+// @license        MIT
 // ==/UserScript==
 
 (function() {
