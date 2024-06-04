@@ -5,7 +5,7 @@
 
 This is a Russian language script for [Game Jolt](https://gamejolt.com/), implemented as a script for [Tampermonkey](https://github.com/Tampermonkey/tampermonkey).
 
-Current version: **0.4 Indev.**
+Current version: **0.5 Indev.**
 
 ## Installation
 

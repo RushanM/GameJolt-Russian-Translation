@@ -772,9 +772,9 @@
 
     // Замена изображения
     function replaceImage() {
-        const img = document.querySelector('a[href="https://gamejolt.com/#shop"] img[src="https://m.gjcdn.net/gen/400/32973460-yjrf3ni8-v4.webp"]');
+        const img = document.querySelector('a[href="https://gamejolt.com/p/game-jolt-s-celebration-of-pride-month-has-begun-go-to-the-shop-to-mxvnfzwg"] img[src="https://m.gjcdn.net/gen/400/32981814-sd4xeihs-v4.webp"]');
         if (img) {
-            img.src = 'https://i.imgur.com/2JBIDiZ.png';
+            img.src = 'https://i.imgur.com/sqNFMx6.png';
         }
     }
 
