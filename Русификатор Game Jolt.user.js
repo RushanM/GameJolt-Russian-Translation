@@ -2,7 +2,7 @@
 // @name           Game Jolt Russian Translation
 // @name:ru        Русификатор Game Jolt
 // @namespace      http://tampermonkey.net/
-// @version        0.4
+// @version        0.5
 // @icon           https://s.gjcdn.net/img/favicon.png
 // @description    Adds Russian language to Game Jolt.
 // @description:ru Русифицирует Game Jolt.
