@@ -650,22 +650,6 @@
                     element.classList.add('use-fira');
                 });
 
-            // Дополнительные замены для точной даты
-            const timeElements = document.querySelectorAll('span[title]');
-            timeElements.forEach(element => {
-                const timestamp = new Date(element.title);
-                const formattedDate = new Intl.DateTimeFormat('ru-RU', {
-                    day: 'numeric',
-                    month: 'long',
-                    year: 'numeric',
-                    hour: 'numeric',
-                    minute: 'numeric',
-                    second: 'numeric'
-                }).format(timestamp);
-
-                element.textContent = formattedDate;
-            });
-
             // Массив переводов названий вкладки
             const titleReplacements = 
                 [
