@@ -1,4 +1,5 @@
 # Русификатор Game Jolt
+
 <center>
     <img title="Обзор перевода" alt="Обзор перевода" src="https://github.com/RushanM/GameJolt-Russian-Translation/blob/main/cover.png?raw=true">
 </center>
@@ -15,10 +16,12 @@
 4. Готово!
 
 ## Материальная поддержка
+
 Если моя работа нравится вам настолько, что вы готовы отправить мне деньги, можно сделать это по следующим ссылкам:
-* [Boosty](https://boosty.to/rushanm)
-* [VK Pay](https://vk.me/moneysend/deflecta)
-* [Donation Alerts](https://www.donationalerts.com/r/deflecta)
-* [ЮMoney](https://yoomoney.ru/to/410015215253910)
+
+* [Boosty](https://boosty.to/rushanm);
+* [VK Pay](https://vk.me/moneysend/deflecta);
+* [Donation Alerts](https://www.donationalerts.com/r/deflecta);
+* [ЮMoney](https://yoomoney.ru/to/410015215253910).
 
 Буду благодарен за каждый рубль!

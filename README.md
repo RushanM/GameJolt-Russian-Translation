@@ -1,12 +1,11 @@
 # Русификатор Game Jolt
+
 <div align="center">
     <img title="Обзор перевода" alt="Обзор перевода" src="cover.png">
 </div>
 <br>
 
 Русификатор [Game Jolt](https://gamejolt.com/), реализованный в виде скрипта для [Tampermonkey](https://github.com/Tampermonkey/tampermonkey).
-
-Текущая версия: **0.5 Indev.**
 
 ## Установка
 
@@ -16,10 +15,12 @@
 4. Готово!
 
 ## Материальная поддержка
+
 Если моя работа нравится вам настолько, что вы готовы отправить мне деньги, можно сделать это по следующим ссылкам:
-* [Boosty](https://boosty.to/rushanm)
-* [VK Pay](https://vk.me/moneysend/deflecta)
-* [Donation Alerts](https://www.donationalerts.com/r/deflecta)
-* [ЮMoney](https://yoomoney.ru/to/410015215253910)
+
+* [Boosty](https://boosty.to/rushanm);
+* [VK Pay](https://vk.me/moneysend/deflecta);
+* [Donation Alerts](https://www.donationalerts.com/r/deflecta);
+* [ЮMoney](https://yoomoney.ru/to/410015215253910).
 
 Буду благодарен за каждый рубль!

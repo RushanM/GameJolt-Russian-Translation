@@ -1,4 +1,5 @@
 # Game Jolt Russian Translation
+
 <center>
     <img title="Translation overview" alt="Translation overview" src="https://github.com/RushanM/GameJolt-Russian-Translation/blob/main/cover.png?raw=true">
 </center>
@@ -15,10 +16,12 @@ Current version: **0.5 Indev.**
 4. Done!
 
 ## Support My Work
+
 If you appreciate my work and would like to support me, you can do so through the following links:
-* [Boosty](https://boosty.to/rushanm)
-* [Donation Alerts](https://www.donationalerts.com/r/deflecta)
-* [YooMoney](https://yoomoney.ru/to/410015215253910)
-* [VK Pay](https://vk.me/moneysend/deflecta)
+
+* [Boosty](https://boosty.to/rushanm);
+* [Donation Alerts](https://www.donationalerts.com/r/deflecta);
+* [YooMoney](https://yoomoney.ru/to/410015215253910);
+* [VK Pay](https://vk.me/moneysend/deflecta).
 
 I am grateful for every contribution!
