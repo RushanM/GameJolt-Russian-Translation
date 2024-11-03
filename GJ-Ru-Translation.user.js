@@ -15,7 +15,7 @@
 // @namespace       gjrutranslation
 // @supportURL      https://github.com/RushanM/GameJolt-Russian-Translation/issues
 // @updateURL       https://github.com/RushanM/GameJolt-Russian-Translation/raw/main/%D0%A0%D1%83%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80%20Game%20Jolt.user.js
-// @version         1-B6
+// @version         1-B7
 // ==/UserScript==
 
 (function() {
@@ -118,15 +118,36 @@
                 {
                     oldText: 'June Login Streak',
                     newText: 'ИЮНЬСКИЙ МАРАФОН ПОСЕЩЕНИЙ'
+                },
+                {
+                    oldText: 'Jule Login Streak',
+                    newText: 'ИЮЛЬСКИЙ МАРАФОН ПОСЕЩЕНИЙ'
+                },
+                {
+                    oldText: 'August Login Streak',
+                    newText: 'АВГУСТОВСКИЙ МАРАФОН ПОСЕЩЕНИЙ'
+                },
+                {
+                    oldText: 'September Login Streak',
+                    newText: 'СЕНТЯБРЬСКИЙ МАРАФОН ПОСЕЩЕНИЙ'
+                },
+                {
+                    oldText: 'Summon the Power of Lightning',
+                    newText: 'ПРИЗОВИТЕ СИЛУ МОЛНИИ'
                 }
             ]
         },
         {
             selector: 'div.sticker-charge-tooltip > p > span, div.sticker-charge-tooltip > div > span',
             replacements: [{
-                oldText: 'Complete daily quests to fill your charge orbs. Each day you miss a daily quest, your charge goes down.',
-                newText: 'Выполняйте ежедневные квесты, чтобы заряжать свои сферы. Каждый день, когда вы пропускаете квест, ваша энергия уменьшается.'
-            }]
+                    oldText: 'Complete daily quests to fill your charge orbs. Each day you miss a daily quest, your charge goes down.',
+                    newText: 'Выполняйте ежедневные квесты, чтобы заряжать свои сферы. Каждый день, когда вы пропускаете квест, ваша энергия уменьшается.',
+                },
+                {
+                    oldText: 'Once all your charge orbs are full, you can support your favorite Game Jolt Creators by giving them a charged sticker! Every charged sticker uses 2 charge orbs and puts 💰💰💰 in their IRL pockets.',
+                    newText: 'Как только все сферы будут заряжены, вы сможете поддержать своих любимых творцов на Game Jolt, наклеив заряженную наклейку на их публикацию! Каждая заряженная наклейка расходует 2 заряженной сферы и ложит 💰💰💰 в их реальный кошелёк.'
+                }
+            ]
         },
         {
             selector: 'h4.-charge-text > span:first-child',
@@ -159,96 +180,94 @@
         {
             selector: 'div._subheading',
             replacements: [{
-                oldText: 'Daily Quests',
-                newText: 'ЕЖЕДНЕВНЫЕ КВЕСТЫ'
-            }]
+                    oldText: 'Daily Quests',
+                    newText: 'ЕЖЕДНЕВНЫЕ КВЕСТЫ'
+                },
+                {
+                    oldText: '',
+                    newText: '',
+                    addClass: 'use-fira'
+                },
+                {
+                    oldText: 'Active Quests',
+                    newText: 'АКТИВНЫЕ КВЕСТЫ'
+                },
+                {
+                    oldText: 'Available Quests',
+                    newText: 'ДОСТУПНЫЕ КВЕСТЫ'
+                }
+            ]
         },
         {
             selector: 'span.user-dogtag.tag.tag-highlight',
             replacements: [{
-                oldText: 'Dev',
-                newText: 'Разраб'
-            }]
-        },
-        {
-            selector: 'span.user-dogtag.tag.tag-highlight',
-            replacements: [{
-                oldText: 'GMR',
-                newText: 'Игрок'
-            }]
-        },
-        {
-            selector: 'span.user-dogtag.tag.tag-highlight',
-            replacements: [{
-                oldText: 'MOD',
-                newText: 'Модер'
-            }]
-        }, {
-            selector: 'span.user-dogtag.tag.user-dogtag-guy',
-            replacements: [{
-                oldText: 'GUY',
-                newText: 'Чел'
-            }]
-        }, {
-            selector: 'span.user-dogtag.tag.tag-highlight',
-            replacements: [{
-                oldText: 'ELF',
-                newText: 'Эльф'
-            }]
-        }, {
-            selector: 'span.user-dogtag.tag.tag-highlight',
-            replacements: [{
-                oldText: 'BUG',
-                newText: 'Баг'
-            }]
-        }, {
-            selector: 'span.user-dogtag.tag.tag-highlight',
-            replacements: [{
-                oldText: 'She',
-                newText: 'Она'
-            }]
-        }, {
-            selector: 'span.user-dogtag.tag.tag-highlight',
-            replacements: [{
-                oldText: 'Her',
-                newText: 'Ей'
-            }]
-        }, {
-            selector: 'span.user-dogtag.tag.tag-highlight',
-            replacements: [{
-                oldText: 'He',
-                newText: 'Он'
-            }]
-        }, {
-            selector: 'span.user-dogtag.tag.tag-highlight',
-            replacements: [{
-                oldText: 'Him',
-                newText: 'Ему'
-            }]
-        }, {
-            selector: 'span.user-dogtag.tag.tag-highlight',
-            replacements: [{
-                oldText: 'They',
-                newText: 'Они'
-            }]
-        }, {
-            selector: 'span.user-dogtag.tag.tag-highlight',
-            replacements: [{
-                oldText: 'Them',
-                newText: 'Им'
-            }]
+                    oldText: 'Dev',
+                    newText: 'Разраб'
+                },
+                {
+                    oldText: 'GMR',
+                    newText: 'Игрок'
+                },
+                {
+                    oldText: 'MOD',
+                    newText: 'Модер'
+                },
+                {
+                    oldText: 'MOD',
+                    newText: 'Модер'
+                },
+                {
+                    oldText: 'GUY',
+                    newText: 'Чел'
+                },
+                {
+                    oldText: 'ELF',
+                    newText: 'Эльф'
+                },
+                {
+                    oldText: 'BUG',
+                    newText: 'Баг'
+                },
+                {
+                    oldText: 'She',
+                    newText: 'Она'
+                },
+                {
+                    oldText: 'Her',
+                    newText: 'Ей'
+                },
+                {
+                    oldText: 'He',
+                    newText: 'Он'
+                },
+                {
+                    oldText: 'Him',
+                    newText: 'Ему'
+                },
+                {
+                    oldText: 'They',
+                    newText: 'Они'
+                },
+                {
+                    oldText: 'Them',
+                    newText: 'Им'
+                }
+            ]
         }, {
             selector: 'span.tag.tag-highlight',
             replacements: [{
-                oldText: 'Follows you',
-                newText: 'Ваш подписчик'
-            }]
-        }, {
-            selector: 'span.tag.tag-highlight',
-            replacements: [{
-                oldText: 'Friend',
-                newText: 'Друг'
-            }]
+                    oldText: 'Follows you',
+                    newText: 'Ваш подписчик'
+                },
+                {
+                    oldText: 'Friend',
+                    newText: 'Друг'
+                },
+                {
+                    oldText: 'Online',
+                    newText: 'В сети'
+                }
+            ]
         }, {
             selector: 'span.tag',
             replacements: [{
@@ -256,17 +275,16 @@
                 newText: 'Офлайн'
             }]
         }, {
-            selector: 'span.tag.tag-highlight',
-            replacements: [{
-                oldText: 'Online',
-                newText: 'В сети'
-            }]
-        }, {
             selector: 'nav#shell-top-nav a strong',
             replacements: [{
-                oldText: 'Discover',
-                newText: 'ОБЗОР'
-            }]
+                    oldText: 'Discover',
+                    newText: 'ОБЗОР'
+                },
+                {
+                    oldText: 'Store',
+                    newText: 'КАТАЛОГ'
+                }
+            ]
         }, {
             selector: 'div.-member-counts a',
             replacements: [{
@@ -276,15 +294,14 @@
         }, {
             selector: 'nav.-menu a span',
             replacements: [{
-                oldText: 'Following',
-                newText: 'Подписки'
-            }]
-        }, {
-            selector: 'nav.-menu a span',
-            replacements: [{
-                oldText: 'For You',
-                newText: 'Для вас'
-            }]
+                    oldText: 'Following',
+                    newText: 'Подписки'
+                },
+                {
+                    oldText: 'For You',
+                    newText: 'Для вас'
+                }
+            ]
         }, {
             selector: 'div.-username',
             replacements: [{
@@ -294,27 +311,18 @@
         }, {
             selector: 'div.-input',
             replacements: [{
-                oldText: 'So, what\'s on your mind?',
-                newText: 'Что у вас на уме?'
-            }]
-        }, {
-            selector: 'div.-input',
-            replacements: [{
-                oldText: 'Share your creations!',
-                newText: 'Поделитесь тем, что сделали!'
-            }]
-        }, {
-            selector: 'div.-input',
-            replacements: [{
-                oldText: 'Keep it related to POPGOES!',
-                newText: 'Публикация должна быть связана с POPGOES!'
-            }]
-        }, {
-            selector: 'nav#shell-top-nav a strong',
-            replacements: [{
-                oldText: 'Store',
-                newText: 'КАТАЛОГ'
-            }]
+                    oldText: 'So, what\'s on your mind?',
+                    newText: 'Что у вас на уме?'
+                },
+                {
+                    oldText: 'Share your creations!',
+                    newText: 'Поделитесь тем, что сделали!'
+                },
+                {
+                    oldText: 'Keep it related to POPGOES!',
+                    newText: 'Публикация должна быть связана с POPGOES!'
+                }
+            ]
         }, {
             selector: 'div.-message',
             replacements: [{
@@ -425,12 +433,6 @@
                 newText: 'Запросы в друзья'
             }]
         }, {
-            selector: 'div.sticker-charge-tooltip > p > span, div.sticker-charge-tooltip > div > span',
-            replacements: [{
-                oldText: 'Once all your charge orbs are full, you can support your favorite Game Jolt Creators by giving them a charged sticker! Every charged sticker uses 2 charge orbs and puts 💰💰💰 in their IRL pockets.',
-                newText: 'Как только все сферы будут заряжены, вы сможете поддержать своих любимых творцов на Game Jolt, наклеив заряженную наклейку на их публикацию! Каждая заряженная наклейка расходует 2 заряженной сферы и ложит 💰💰💰 в их реальный кошелёк.'
-            }]
-        }, {
             selector: 'span',
             replacements: [{
                 oldText: 'Learn more',
@@ -455,13 +457,6 @@
                 newText: '$1 д.'
             }]
         }, {
-            selector: 'div._subheading',
-            replacements: [{
-                oldText: '',
-                newText: '',
-                addClass: 'use-fira'
-            }]
-        }, {
             selector: 'div[style="Staatliches"]',
             replacements: [{
                 oldText: '',
@@ -475,18 +470,6 @@
                 newText: '',
                 addClass: 'use-fira'
             }]
-        }, {
-            selector: 'div._subheading',
-            replacements: [{
-                oldText: 'Active Quests',
-                newText: 'АКТИВНЫЕ КВЕСТЫ'
-            }]
-        }, {
-            selector: 'div.text-center > div',
-            replacements: []
-        }, {
-            selector: 'div.text-center > div',
-            replacements: []
         }, {
             selector: 'div.content-viewer.quest-stage-description-content p span',
             replacements: [{
@@ -566,25 +549,6 @@
                 {
                     oldText: 'You\'ll also get a Welcome to Game Jolt pack after you\'ve placed 11 charged stickers.',
                     newText: 'Также вы получите набор «Добро пожаловать на Game Jolt» после размещения 11 заряженных наклеек.'
-                }
-            ]
-        }, {
-            selector: 'div.text-center > div',
-            replacements: [{
-                    oldText: 'Jule Login Streak',
-                    newText: 'ИЮЛЬСКИЙ МАРАФОН ПОСЕЩЕНИЙ'
-                },
-                {
-                    oldText: 'August Login Streak',
-                    newText: 'АВГУСТОВСКИЙ МАРАФОН ПОСЕЩЕНИЙ'
-                },
-                {
-                    oldText: 'September Login Streak',
-                    newText: 'СЕНТЯБРЬСКИЙ МАРАФОН ПОСЕЩЕНИЙ'
-                },
-                {
-                    oldText: 'Summon the Power of Lightning',
-                    newText: 'ПРИЗОВИТЕ СИЛУ МОЛНИИ'
                 }
             ]
         }, {
@@ -673,12 +637,6 @@
                     newText: 'Сентябрьский марафон посещений'
                 }
             ]
-        }, {
-            selector: 'div._subheading',
-            replacements: [{
-                oldText: 'Available Quests',
-                newText: 'ДОСТУПНЫЕ КВЕСТЫ'
-            }]
         }, {
             selector: 'div.-page-cut-bottom.page-cut .page-cut-content .button.-trans',
             replacements: [{
