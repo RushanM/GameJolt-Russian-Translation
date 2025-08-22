@@ -20,7 +20,7 @@
 Если моя работа нравится вам настолько, что вы готовы отправить мне деньги, можно сделать это по следующим ссылкам:
 
 * [Boosty](https://boosty.to/rushanm);
-* [VK Pay](https://vk.me/moneysend/deflecta);
+* [VK Donut](https://vk.com/deflcomm?w=donut_payment-71906125&levelId=106);
 * [Donation Alerts](https://www.donationalerts.com/r/deflecta);
 * [ЮMoney](https://yoomoney.ru/to/410015215253910).
 

@@ -22,6 +22,6 @@ If you appreciate my work and would like to support me, you can do so through th
 * [Boosty](https://boosty.to/rushanm);
 * [Donation Alerts](https://www.donationalerts.com/r/deflecta);
 * [YooMoney](https://yoomoney.ru/to/410015215253910);
-* [VK Pay](https://vk.me/moneysend/deflecta).
+* [VK Donut](https://vk.com/deflcomm?w=donut_payment-71906125&levelId=106).
 
 I am grateful for every contribution!
